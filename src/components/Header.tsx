@@ -53,17 +53,17 @@ export default function Header() {
         }`}
       >
         <div className="mx-auto flex max-w-[1520px] items-center justify-between gap-3 px-4 py-2.5 sm:gap-6 sm:px-8 sm:py-3">
-          {/* Logo met ronde pilvormige rand */}
+          {/* Logo als speelse gekantelde sticker met afgeronde hoeken */}
           <Link to="/" className="group relative shrink-0" aria-label="ZZ PartyTotaal home">
             <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.2 }}
-              className="flex items-center rounded-full bg-white p-1 shadow-[0_2px_10px_rgba(0,0,0,0.12)] ring-1 ring-ink/10"
+              whileHover={{ rotate: 2, scale: 1.04 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="sticker -rotate-2 rounded-xl bg-white px-2.5 py-1 sm:px-3 sm:py-1.5"
             >
               <img
                 src={LOGO}
                 alt="ZZ PartyTotaal — het totale partyconcept"
-                className="h-8 w-auto rounded-full object-contain sm:h-10"
+                className="h-9 w-auto rounded-lg object-contain sm:h-11"
               />
             </motion.div>
           </Link>
@@ -158,11 +158,11 @@ export default function Header() {
           >
             <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_80%_10%,rgba(0,0,0,0.25),transparent)]" />
             <div className="relative flex shrink-0 items-center justify-between px-5 py-3 sm:px-8">
-              <div className="flex items-center rounded-full bg-white p-1 shadow-md ring-1 ring-white/20">
+              <div className="sticker -rotate-2 rounded-xl bg-white px-2.5 py-1">
                 <img
                   src={LOGO}
                   alt="ZZ PartyTotaal"
-                  className="h-8 w-auto rounded-full object-contain sm:h-9"
+                  className="h-8 w-auto rounded-lg object-contain sm:h-9"
                 />
               </div>
               <button
@@ -174,7 +174,7 @@ export default function Header() {
               </button>
             </div>
 
-            {/* Scrollbare menu container met subtielere knoppen */}
+            {/* Scrollbaar menu met subtielere typografie */}
             <nav className="relative flex flex-1 flex-col justify-start overflow-y-auto px-6 py-6 sm:justify-center sm:px-12">
               <div className="flex flex-col gap-1.5">
                 {NAV.map((item, i) => (
