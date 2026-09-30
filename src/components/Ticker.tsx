@@ -30,9 +30,12 @@ function Row() {
 
 export default function Ticker() {
   return (
-    <div className="relative z-20 -my-5 select-none overflow-visible py-3">
-      <div className="ticker-smooth relative -left-[5vw] w-[110vw] -rotate-[1.2deg] transform-gpu border-y-4 border-ink bg-brand shadow-xl [backface-visibility:hidden] [outline:1px_solid_transparent]">
-        <div className="flex w-max animate-marquee py-3.5 will-change-transform sm:py-4">
+    /* overflow-hidden vangt de schuine uiteinden netjes af binnen het scherm zonder de pagina op te blazen */
+    <div className="relative z-20 -my-6 overflow-hidden py-8 select-none">
+      {/* w-[104%] en -left-[2%] zorgt dat de schuine hoeken netjes buiten het viewport verdwijnen */}
+      <div className="relative -left-[2%] w-[104%] -rotate-1 bg-brand py-3.5 shadow-2xl border-y-4 border-ink transform-gpu [backface-visibility:hidden]">
+        <div className="flex w-max animate-marquee will-change-transform sm:py-0.5">
+          <Row />
           <Row />
           <Row />
           <Row />

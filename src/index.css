@@ -1,46 +1,176 @@
-import { SparkStar } from "./ui";
+@import "tailwindcss";
 
-const WORDS = [
-  "Meubilair",
-  "Tenten & Parasols",
-  "Buffetten & Barren",
-  "Glaswerk & Servies",
-  "Dranken",
-  "Catering",
-  "Koeling & Tap",
-  "Aankleding & Decoratie",
-  "Evenementen",
-  "BBQ & Keuken",
-];
+@theme {
+  /* ---- ZZ PartyTotaal brand palette ---- */
+  --color-brand: #c20e1d;
+  --color-brand-deep: #8f0a15;
+  --color-brand-bright: #e8192b;
+  --color-blush: #fdeaec;
+  --color-ink: #0b0b0c;
+  --color-coal: #141415;
+  --color-paper: #f7f5f1;
+  --color-smoke: #757575;
 
-function Row() {
-  return (
-    <div className="flex shrink-0 items-center">
-      {WORDS.map((w) => (
-        <span key={w} className="flex items-center">
-          <span className="whitespace-nowrap px-6 font-display text-2xl uppercase tracking-wide text-white sm:px-8 sm:text-3xl">
-            {w}
-          </span>
-          <SparkStar className="h-4 w-4 shrink-0 text-ink/70" />
-        </span>
-      ))}
-    </div>
-  );
+  /* Typografie */
+  --font-display: "Anton", "Inter", sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-hand: "Caveat", cursive;
+
+  /* Animaties */
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-marquee-slow: marquee 44s linear infinite;
+  --animate-spin-slow: spin 14s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }
 
-export default function Ticker() {
-  return (
-    /* overflow-hidden vangt de schuine uiteinden netjes af binnen het scherm zonder de pagina op te blazen */
-    <div className="relative z-20 -my-6 overflow-hidden py-8 select-none">
-      {/* w-[104%] en -left-[2%] zorgt dat de schuine hoeken netjes buiten het viewport verdwijnen */}
-      <div className="relative -left-[2%] w-[104%] -rotate-1 bg-brand py-3.5 shadow-2xl border-y-4 border-ink transform-gpu [backface-visibility:hidden]">
-        <div className="flex w-max animate-marquee will-change-transform sm:py-0.5">
-          <Row />
-          <Row />
-          <Row />
-          <Row />
-        </div>
-      </div>
-    </div>
-  );
+/* Base resets & styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+/* Custom desktop scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0b0c;
+}
+::-webkit-scrollbar-thumb {
+  background: #3a3a3d;
+  border-radius: 99px;
+  border: 2px solid #0b0b0c;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand);
+}
+
+/* Typografie hulpmiddelen */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.font-hand {
+  font-family: var(--font-hand);
+}
+
+/* Outlined display text */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(247, 245, 241, 0.55);
+}
+.text-outline-brand {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(194, 14, 29, 0.9);
+}
+.text-outline-ink {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(11, 11, 12, 0.35);
+}
+
+/* Film grain effect */
+.noise {
+  position: relative;
+  isolation: isolate;
+}
+.noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.34'/%3E%3C/svg%3E");
+}
+
+/* Link underline effect */
+.link-sweep {
+  position: relative;
+}
+.link-sweep::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.45s cubic-bezier(0.65, 0.05, 0, 1);
+}
+.link-sweep:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Afbeelding zoom effect */
+.img-zoom img {
+  transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.img-zoom:hover img {
+  transform: scale(1.06);
+}
+
+/* Sticker schaduw voor logo en badges */
+.sticker {
+  box-shadow:
+    0 1px 2px rgba(11, 11, 12, 0.18),
+    0 8px 24px rgba(11, 11, 12, 0.22);
+}
+
+/* Verberg mobiele/menu scrollbalk zonder scrollen te breken */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Anti-aliasing fix voor geroteerde banners/tickers (voorkomt gekartelde pixels) */
+.ticker-smooth {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-slow,
+  .animate-spin-slow {
+    animation: none !important;
+  }
 }
