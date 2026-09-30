@@ -52,21 +52,16 @@ export default function Header() {
             : "border-b border-white/0 text-paper"
         }`}
       >
-        <div className="mx-auto flex max-w-[1520px] items-center justify-between gap-6 px-5 py-3 sm:px-8">
+        <div className="mx-auto flex max-w-[1520px] items-center justify-between gap-2 px-3 py-2.5 sm:gap-6 sm:px-8 sm:py-3"> 
           {/* Logo sticker */}
-          <Link to="/" className="group relative shrink-0" aria-label="ZZ PartyTotaal home">
+          <Link to="/" className="group relative min-w-0 shrink" aria-label="ZZ PartyTotaal home">
             <motion.div
-              whileHover={{ rotate: 2, scale: 1.04 }}
-              transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              className="sticker -rotate-2 rounded-xl bg-white px-3 py-1.5"
-            >
-              <img
-                src={LOGO}
-                alt="ZZ PartyTotaal — het totale partyconcept"
-                className="h-11 w-auto sm:h-12"
-              />
-            </motion.div>
-          </Link>
+                whileHover={{ rotate: 2, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                className="sticker -rotate-2 rounded-lg bg-white p-0.5 sm:rounded-xl sm:px-2.5 sm:py-1"> 
+                <img src={LOGO} alt="ZZ PartyTotaal" className="h-8 w-auto max-w-[120px] object-contain xs:max-w-[150px] sm:h-11 sm:max-w-none" />
+              </motion.div>
+            </Link>
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-7 lg:flex">
@@ -91,7 +86,7 @@ export default function Header() {
             )}
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <a
               href={PHONE_HREF}
               className={`hidden items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-bold transition-colors md:flex ${
@@ -108,7 +103,7 @@ export default function Header() {
             <button
               onClick={() => setCartOpen(true)}
               aria-label="Aanvraaglijst openen"
-              className={`relative grid h-11 w-11 place-items-center rounded-full border transition-colors ${
+              className={`relative grid h-9 w-9 sm:h-11 sm:w-11 place-items-center rounded-full border transition-colors ${
                 scrolled
                   ? "border-ink/15 hover:border-brand hover:text-brand"
                   : "border-white/25 hover:border-brand-bright hover:text-brand-bright"
@@ -136,7 +131,7 @@ export default function Header() {
             <button
               onClick={() => setOpen(true)}
               aria-label="Menu openen"
-              className={`grid h-11 w-11 place-items-center rounded-full border transition-colors lg:hidden ${
+              className={`grid h-9 w-9 sm:h-11 sm:w-11 place-items-center rounded-full border transition-colors lg:hidden ${
                 scrolled ? "border-ink/15 hover:border-brand" : "border-white/25 hover:border-brand-bright"
               }`}
             >
