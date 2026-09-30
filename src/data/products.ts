@@ -28,12 +28,12 @@ export const CATEGORIES = [
 ];
 
 const IMG = {
-  statafel: "/products/statafel.jpg",
-  stoel: "/products/stoel.jpg",
-  glazenkrat: "/products/glazenkrat.jpg",
-  dinertafel: "/products/dinertafel.jpg",
-  biertap: "/products/biertap.jpg",
-  loungebank: "/products/loungebank.jpg",
+  statafel: "./products/statafel.jpg",
+  stoel: "./products/stoel.jpg",
+  glazenkrat: "./products/glazenkrat.jpg",
+  dinertafel: "./products/dinertafel.jpg",
+  biertap: "./products/biertap.jpg",
+  loungebank: "./products/loungebank.jpg",
   chairsLifestyle:
     "https://images.pexels.com/photos/33675928/pexels-photo-33675928.jpeg?auto=compress&cs=tinysrgb&w=1200",
   tableLifestyle:
