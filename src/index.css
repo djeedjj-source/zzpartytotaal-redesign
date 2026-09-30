@@ -160,11 +160,12 @@ body {
   scrollbar-width: none;
 }
 
-/* Anti-aliasing fix voor geroteerde banners/tickers (voorkomt gekartelde pixels) */
+/* Anti-aliasing fix voor geroteerde banners/tickers */
 .ticker-smooth {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform: translateZ(0);
+  outline: 1px solid transparent;
 }
 
 @media (prefers-reduced-motion: reduce) {
