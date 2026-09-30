@@ -2,67 +2,41 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { LOGO } from "./ui";
 
-export default function Preloader({ onDone }: { onDone: () => void }) {
-  const [count, setCount] = useState(0);
+export default function Preloader() {
+  const [done, setDone] = useState(false);
 
   useEffect(() => {
-    const started = performance.now();
-    const tick = (t: number) => {
-      const p = Math.min(1, (t - started) / 1500);
-      setCount(Math.round(p * 100));
-      if (p < 1) requestAnimationFrame(tick);
-      else setTimeout(onDone, 350);
-    };
-    const raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [onDone]);
+    const timer = setTimeout(() => setDone(true), 1300);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (done) return null;
 
   return (
     <motion.div
-      className="fixed inset-0 z-[100] grid place-items-center bg-ink"
-      exit={{ y: "-100%" }}
-      transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-brand"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_40%,rgba(194,14,29,0.22),transparent_70%)]" />
+      {/* Diagonaal watermerk / achtergrondgloed */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.15),transparent_70%)]" />
 
-      <div className="relative flex flex-col items-center">
-        <motion.div
-          initial={{ scale: 0.7, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ type: "spring", stiffness: 180, damping: 14 }}
-          className="flex items-center rounded-full bg-white p-1.5 shadow-2xl ring-2 ring-brand/20"
-          >
-           <img
-            src={LOGO}
-            alt="ZZ PartyTotaal"
-            className="h-14 w-auto rounded-full object-contain sm:h-18"
-           />
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.25 }}
-          className="mt-6 font-hand text-2xl text-brand-bright"
-        >
-          het totale partyconcept
-        </motion.p>
-      </div>
-
-      <div className="absolute bottom-10 left-1/2 w-56 -translate-x-1/2">
-        <div className="flex items-end justify-between text-[11px] font-bold uppercase tracking-[0.3em] text-paper/50">
-          <span>Laden</span>
-          <span className="font-display text-2xl tracking-normal text-paper">
-            {count}%
-          </span>
-        </div>
-        <div className="mt-2 h-[3px] overflow-hidden rounded-full bg-white/10">
-          <div
-            className="h-full rounded-full bg-brand transition-[width] duration-100"
-            style={{ width: `${count}%` }}
-          />
-        </div>
-      </div>
+      {/* Bakwagen-stijl oversized sticker logo */}
+      <motion.div
+        initial={{ scale: 0.8, rotate: -12, opacity: 0 }}
+        animate={{ scale: 1, rotate: -5, opacity: 1 }}
+        exit={{ scale: 1.15, opacity: 0 }}
+        transition={{ type: "spring", stiffness: 140, damping: 14 }}
+        className="sticker relative max-w-none rounded-2xl bg-white p-2 shadow-[0_25px_60px_rgba(0,0,0,0.5)] sm:p-4"
+      >
+        <img
+          src={LOGO}
+          alt="ZZ PartyTotaal"
+          className="h-auto w-[85vw] max-w-[900px] rounded-xl object-contain sm:w-[70vw]"
+        />
+      </motion.div>
     </motion.div>
   );
 }

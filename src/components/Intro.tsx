@@ -100,34 +100,34 @@ export default function Intro() {
               />
             </motion.div>
 
-            {/* Logo sticker */}
-           <motion.div
-             initial={{ opacity: 0, scale: 0, rotate: 12 }}
-             whileInView={{ opacity: 1, scale: 1, rotate: 3 }}
-             viewport={{ once: true, margin: "-60px" }}
-             transition={{ type: "spring", stiffness: 160, damping: 12, delay: 0.4 }}
-             className="absolute -right-3 -top-6 rounded-full bg-white p-1.5 shadow-xl ring-1 ring-ink/10 sm:-right-6 sm:-top-8"
-           >
-             <img 
-             src={LOGO} 
-             alt="ZZ PartyTotaal" 
-             className="h-12 w-auto rounded-full object-contain sm:h-16" 
-            />
-          </motion.div>
+            {/* Logo sticker — afgeronde rechthoek met subtiele tilt */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0, rotate: 12 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 4 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ type: "spring", stiffness: 160, damping: 12, delay: 0.4 }}
+              className="sticker absolute -right-3 -top-6 rounded-xl bg-white p-1 sm:-right-6 sm:-top-8 sm:p-1.5"
+            >
+              <img 
+                src={LOGO} 
+                alt="ZZ PartyTotaal" 
+                className="h-12 w-auto rounded-lg object-contain sm:h-16" 
+              />
+            </motion.div>
 
             <SquiggleArrow className="absolute -left-14 top-1/3 hidden h-16 w-24 -scale-x-100 text-brand lg:block" />
           </div>
         </div>
 
-        {/* Stats */}
-        <div className="mt-24 grid grid-cols-2 gap-y-10 border-t-2 border-ink/10 pt-10 sm:mt-32 lg:grid-cols-4">
+        {/* Stats Grid met gegarandeerde tussenruimte tegen overlap */}
+        <div className="mt-20 grid grid-cols-2 gap-x-8 gap-y-12 border-t-2 border-ink/10 pt-12 sm:mt-28 sm:gap-x-12 lg:grid-cols-4 lg:gap-x-8">
           {STATS.map((s, i) => (
             <Reveal key={s.label} delay={0.06 * i}>
-              <div className={i > 0 ? "lg:border-l-2 lg:border-ink/10 lg:pl-8" : ""}>
-                <div className="font-display text-5xl text-brand sm:text-6xl">
+              <div className={`flex flex-col ${i > 0 ? "lg:border-l-2 lg:border-ink/10 lg:pl-8" : ""}`}>
+                <div className="font-display text-4xl leading-none text-brand sm:text-5xl lg:text-6xl">
                   <Counter to={s.value} suffix={s.suffix} />
                 </div>
-                <div className="mt-2 text-[13px] font-bold uppercase tracking-[0.18em] text-ink/55">
+                <div className="mt-3 text-xs font-bold uppercase tracking-[0.14em] text-ink/65 sm:text-[13px] sm:tracking-[0.18em]">
                   {s.label}
                 </div>
               </div>
