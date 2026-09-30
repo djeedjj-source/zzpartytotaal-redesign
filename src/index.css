@@ -149,3 +149,14 @@ body {
     animation: none !important;
   }
 }
+
+/* Verberg scrollbalk voor Chrome, Safari en Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Verberg scrollbalk voor IE, Edge en Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE en Edge */
+  scrollbar-width: none;  /* Firefox */
+}

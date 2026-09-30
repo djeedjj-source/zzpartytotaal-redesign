@@ -52,7 +52,7 @@ export default function Header() {
             : "border-b border-white/0 text-paper"
         }`}
       >
-        <div className="mx-auto flex max-w-[1520px] items-center justify-between gap-3 px-4 py-2.5 sm:gap-6 sm:px-8 sm:py-3">
+        <div className="mx-auto flex max-w-[1520px] items-center justify-between gap-1 px-2.5 py-2 sm:gap-6 sm:px-8 sm:py-3">
           {/* Logo als speelse gekantelde sticker met afgeronde hoeken */}
           <Link to="/" className="group relative z-10 -mb-3 shrink-0 sm:-mb-5" aria-label="ZZ PartyTotaal home">
            <motion.div
@@ -88,7 +88,7 @@ export default function Header() {
             )}
           </nav>
 
-          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
             <a
               href={PHONE_HREF}
               className={`hidden items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-bold transition-colors md:flex ${
@@ -172,7 +172,7 @@ export default function Header() {
             </div>
 
             {/* Scrollbaar menu met subtielere typografie */}
-            <nav className="relative flex flex-1 flex-col justify-start overflow-y-auto px-6 py-6 sm:justify-center sm:px-12">
+            <nav className="no-scrollbar relative flex flex-1 flex-col justify-start overflow-y-auto px-6 py-4 sm:justify-center sm:px-12">
               <div className="flex flex-col gap-1.5">
                 {NAV.map((item, i) => (
                   <div key={item.label} className="overflow-hidden border-b border-white/10 pb-1">
