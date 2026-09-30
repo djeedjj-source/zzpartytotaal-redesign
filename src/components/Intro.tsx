@@ -101,15 +101,19 @@ export default function Intro() {
             </motion.div>
 
             {/* Logo sticker */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0, rotate: 20 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: 6 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ type: "spring", stiffness: 160, damping: 12, delay: 0.4 }}
-              className="sticker absolute -right-3 -top-8 rounded-2xl bg-white p-3 sm:-right-6"
-            >
-              <img src={LOGO} alt="ZZ PartyTotaal" className="h-20 w-auto sm:h-24" />
-            </motion.div>
+           <motion.div
+             initial={{ opacity: 0, scale: 0, rotate: 12 }}
+             whileInView={{ opacity: 1, scale: 1, rotate: 3 }}
+             viewport={{ once: true, margin: "-60px" }}
+             transition={{ type: "spring", stiffness: 160, damping: 12, delay: 0.4 }}
+             className="absolute -right-3 -top-6 rounded-full bg-white p-1.5 shadow-xl ring-1 ring-ink/10 sm:-right-6 sm:-top-8"
+           >
+             <img 
+             src={LOGO} 
+             alt="ZZ PartyTotaal" 
+             className="h-12 w-auto rounded-full object-contain sm:h-16" 
+            />
+          </motion.div>
 
             <SquiggleArrow className="absolute -left-14 top-1/3 hidden h-16 w-24 -scale-x-100 text-brand lg:block" />
           </div>

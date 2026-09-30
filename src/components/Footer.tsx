@@ -51,8 +51,8 @@ export default function Footer() {
         {/* Brand row */}
         <div className="flex flex-wrap items-center justify-between gap-8 border-b border-white/10 pb-12">
           <div className="flex items-center gap-5">
-            <div className="sticker -rotate-2 rounded-2xl bg-white p-3">
-              <img src={LOGO} alt="ZZ PartyTotaal" className="h-16 w-auto sm:h-20" />
+            <div className="flex items-center rounded-full bg-white p-1 shadow-md ring-1 ring-ink/10">
+              <img src={LOGO} alt="ZZ PartyTotaal" className="h-10 w-auto rounded-full object-contain sm:h-12"/>
             </div>
             <div>
               <p className="font-display text-2xl uppercase leading-tight">

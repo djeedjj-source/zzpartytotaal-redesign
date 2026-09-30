@@ -27,16 +27,16 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
 
       <div className="relative flex flex-col items-center">
         <motion.div
-          initial={{ scale: 0.6, rotate: -12, opacity: 0 }}
-          animate={{ scale: 1, rotate: -3, opacity: 1 }}
+          initial={{ scale: 0.7, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
           transition={{ type: "spring", stiffness: 180, damping: 14 }}
-          className="sticker rounded-2xl bg-white p-4"
-        >
-          <img
+          className="flex items-center rounded-full bg-white p-1.5 shadow-2xl ring-2 ring-brand/20"
+          >
+           <img
             src={LOGO}
             alt="ZZ PartyTotaal"
-            className="h-24 w-auto sm:h-28"
-          />
+            className="h-14 w-auto rounded-full object-contain sm:h-18"
+           />
         </motion.div>
 
         <motion.p
