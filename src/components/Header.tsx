@@ -58,7 +58,7 @@ export default function Header() {
             <motion.div
                 whileHover={{ rotate: 2, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                className="sticker -rotate-2 rounded-lg bg-white p-0.5 sm:rounded-xl sm:px-2.5 sm:py-1"> 
+                className="sticker -rotate-2 rounded-lg bg-white p-0.5 sm:rounded-xl sm:px-0.5 sm:py-0.5"> 
                 <img src={LOGO} alt="ZZ PartyTotaal" className="h-8 w-auto max-w-[120px] object-contain xs:max-w-[150px] sm:h-11 sm:max-w-none" />
               </motion.div>
             </Link>
