@@ -158,7 +158,7 @@ export default function Header() {
           >
             <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_80%_10%,rgba(0,0,0,0.25),transparent)]" />
             <div className="relative flex shrink-0 items-center justify-between px-5 py-3 sm:px-8">
-              <div className="sticker -rotate-2 rounded-lg bg-white p-0.5 sm:p-1">
+              <div className="sticker -rotate-2 rounded-lg bg-white p-2px sm:p-1">
                 <img
                   src={LOGO}
                   alt="ZZ PartyTotaal"
