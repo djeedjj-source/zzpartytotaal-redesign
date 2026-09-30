@@ -134,4 +134,4 @@ export const PHONE = "0344 644399";
 export const PHONE_HREF = "tel:+31344644399";
 export const EMAIL = "info@zzpartytotaal.nl";
 
-export const LOGO = "/brand/logo-transparent.png";
+export const LOGO = "./brand/logo-transparent.png";
