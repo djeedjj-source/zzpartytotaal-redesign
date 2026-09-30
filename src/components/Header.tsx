@@ -54,18 +54,15 @@ export default function Header() {
       >
         <div className="mx-auto flex max-w-[1520px] items-center justify-between gap-3 px-4 py-2.5 sm:gap-6 sm:px-8 sm:py-3">
           {/* Logo als speelse gekantelde sticker met afgeronde hoeken */}
-          <Link to="/" className="group relative shrink-0" aria-label="ZZ PartyTotaal home">
-            <motion.div
-              whileHover={{ rotate: 2, scale: 1.04 }}
-              transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              className="sticker -rotate-2 rounded-lg bg-white p-0.5 sm:p-1"
-              >
-              <img
-                src={LOGO}
-                alt="ZZ PartyTotaal — het totale partyconcept"
-                className="h-9 w-auto rounded-lg object-contain sm:h-11"
-              />
-            </motion.div>
+          <Link to="/" className="group relative z-10 -mb-3 shrink-0 sm:-mb-5" aria-label="ZZ PartyTotaal home">
+           <motion.div
+             whileHover={{ rotate: 1, scale: 1.05 }}
+             transition={{ type: "spring", stiffness: 300, damping: 15 }}
+             className="sticker -rotate-2 rounded-xl bg-white p-1 shadow-lg ring-1 ring-ink/10 sm:p-1.5"
+            >
+           <img src={LOGO} alt="ZZ PartyTotaal — het totale partyconcept" className="h-11 w-auto rounded-lg object-contain sm:h-14 md:h-16"
+            />
+           </motion.div>
           </Link>
 
           {/* Desktop nav */}
@@ -158,7 +155,7 @@ export default function Header() {
           >
             <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_80%_10%,rgba(0,0,0,0.25),transparent)]" />
             <div className="relative flex shrink-0 items-center justify-between px-5 py-3 sm:px-8">
-              <div className="sticker -rotate-2 rounded-lg bg-white p-2px sm:p-1">
+              <div className="sticker -rotate-2 rounded-lg bg-white p-0.5 sm:p-1">
                 <img
                   src={LOGO}
                   alt="ZZ PartyTotaal"
