@@ -27,9 +27,12 @@ export default function Hero() {
   const rise = useTransform(scrollYProgress, [0, 0.7], [0, -60]);
 
   return (
-    <section ref={ref} id="top" className="noise relative min-h-svh overflow-hidden bg-ink">
-      {/* Background */}
-      <motion.div style={{ y: imgY, scale: imgScale }} className="absolute inset-0">
+    <section ref={ref} id="top" className="noise relative min-h-svh overflow-x-clip bg-ink">
+      {/* Background met hardwareversnelling tegen kartelranden */}
+      <motion.div
+        style={{ y: imgY, scale: imgScale }}
+        className="absolute inset-0 transform-gpu [backface-visibility:hidden]"
+      >
         <img
           src={HERO_IMG}
           alt="Feestelijke avond met sfeerverlichting en gedekte tafels"
