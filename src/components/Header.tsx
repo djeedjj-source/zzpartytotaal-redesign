@@ -58,8 +58,8 @@ export default function Header() {
             <motion.div
               whileHover={{ rotate: 2, scale: 1.04 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              className="sticker -rotate-2 rounded-xl bg-white px-2.5 py-1 sm:px-3 sm:py-1.5"
-            >
+              className="sticker -rotate-2 rounded-lg bg-white p-0.5 sm:p-1"
+              >
               <img
                 src={LOGO}
                 alt="ZZ PartyTotaal — het totale partyconcept"
@@ -158,7 +158,7 @@ export default function Header() {
           >
             <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_80%_10%,rgba(0,0,0,0.25),transparent)]" />
             <div className="relative flex shrink-0 items-center justify-between px-5 py-3 sm:px-8">
-              <div className="sticker -rotate-2 rounded-xl bg-white px-2.5 py-1">
+              <div className="sticker -rotate-2 rounded-lg bg-white p-0.5 sm:p-1">
                 <img
                   src={LOGO}
                   alt="ZZ PartyTotaal"
