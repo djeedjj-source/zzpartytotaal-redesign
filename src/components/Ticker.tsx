@@ -30,9 +30,10 @@ function Row() {
 
 export default function Ticker() {
   return (
-    <div className="relative z-20 -my-5 select-none overflow-hidden">
-      <div className="-rotate-[1.2deg] scale-[1.02]">
-        <div className="flex w-max animate-marquee border-y-4 border-ink bg-brand py-4 will-change-transform">
+    <div className="relative z-20 -my-5 select-none overflow-visible py-3">
+      <div className="ticker-smooth relative -left-[5vw] w-[110vw] -rotate-[1.2deg] transform-gpu border-y-4 border-ink bg-brand shadow-xl [backface-visibility:hidden] [outline:1px_solid_transparent]">
+        <div className="flex w-max animate-marquee py-3.5 will-change-transform sm:py-4">
+          <Row />
           <Row />
           <Row />
         </div>
