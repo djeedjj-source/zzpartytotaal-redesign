@@ -36,6 +36,9 @@ export default function Preloader() {
           alt="ZZ PartyTotaal"
           className="h-auto w-[85vw] max-w-[900px] rounded-xl object-contain sm:w-[70vw]"
         />
+        <div class="preloader-track">
+          <div class="preloader-bar"></div>
+        </div>
       </motion.div>
     </motion.div>
   );
