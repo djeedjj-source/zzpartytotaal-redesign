@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import { Counter, LOGO, Reveal, SectionTag, SquiggleArrow } from "./ui";
+import { Counter, LogoBadge, Reveal, SectionTag, SquiggleArrow } from "./ui";
 
 const IMG_MAIN =
   "https://images.pexels.com/photos/5638817/pexels-photo-5638817.jpeg?auto=compress&cs=tinysrgb&w=1200";
@@ -107,11 +107,7 @@ export default function Intro() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ type: "spring", stiffness: 160, damping: 12, delay: 0.4 }}
               className="sticker absolute -right-3 -top-6 rounded-xl border-4 border-white bg-ink shadow-xl sm:-right-6 sm:-top-8">
-              <img 
-                src={LOGO} 
-                alt="ZZ PartyTotaal" 
-                className="h-12 w-auto rounded-lg object-contain sm:h-16" 
-              />
+               <LogoBadge size="lg" />
             </motion.div>
 
             <SquiggleArrow className="absolute -left-14 top-1/3 hidden h-16 w-24 -scale-x-100 text-brand lg:block" />

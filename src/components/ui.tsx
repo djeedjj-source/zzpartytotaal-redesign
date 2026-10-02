@@ -135,3 +135,33 @@ export const PHONE_HREF = "tel:+31344644399";
 export const EMAIL = "info@zzpartytotaal.nl";
 
 export const LOGO = "./brand/logo-transparent.png";
+
+/* ------------------------------------------------------------------ */
+/* Logo Badge                                                       */
+/* ------------------------------------------------------------------ */
+
+interface LogoBadgeProps {
+  size?: "sm" | "md" | "lg" | "xl";
+  className?: string;
+}
+
+export function LogoBadge({ size = "md", className = "" }: LogoBadgeProps) {
+  const sizeClasses = {
+    sm: "h-8 sm:h-9",
+    md: "h-11 sm:h-14 md:h-16",
+    lg: "h-12 sm:h-16",
+    xl: "h-auto w-[82vw] max-w-[850px] sm:w-[65vw]",
+  }[size];
+
+  return (
+    <div
+      className={`sticker inline-flex shrink-0 -rotate-2 items-center justify-center rounded-xl border-4 border-white bg-ink p-1 shadow-lg ring-1 ring-ink/10 ${className}`}
+    >
+      <img
+        src={LOGO}
+        alt="ZZ PartyTotaal — het totale partyconcept"
+        className={`${sizeClasses} rounded-lg object-contain`}
+      />
+    </div>
+  );
+}

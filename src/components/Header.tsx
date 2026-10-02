@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useRequestList } from "../context/RequestListContext";
 import SectionLink from "./SectionLink";
-import { LOGO, PHONE, PHONE_HREF } from "./ui";
+import { LOGO, PHONE, PHONE_HREF, LogoBadge } from "./ui";
 
 const NAV = [
   { label: "Verhuur", route: "/assortiment" },
@@ -61,9 +61,8 @@ export default function Header() {
           <Link to="/" onClick={scrollToTop} 
            className="group relative z-10 -mb-3 shrink-0 sm:-mb-5" aria-label="ZZ PartyTotaal home">
             <motion.div whileHover={{ rotate: 1, scale: 1.04 }} 
-            transition={{ type: "spring", stiffness: 300, damping: 15 }}
-            className="sticker -rotate-2 rounded-xl bg-ink border-4 border-white shadow-lg">
-              <img src={LOGO} alt="ZZ PartyTotaal — het totale partyconcept" className="h-11 w-auto rounded-lg object-contain sm:h-14 md:h-16"/>
+                        transition={{ type: "spring", stiffness: 300, damping: 15 }}>
+                        <LogoBadge size="md" />
             </motion.div>
           </Link>
 
@@ -157,9 +156,7 @@ export default function Header() {
           >
             <div className="mx-auto flex w-full max-w-[1520px] items-center justify-between gap-1 px-2.5 py-2 sm:gap-6 sm:px-8 sm:py-3">
               <div onClick={() => { setOpen(false); scrollToTop(); }} className="group relative z-10 -mb-3 shrink-0 cursor-pointer sm:-mb-5">
-                <div className="sticker -rotate-2 rounded-xl border-4 border-white bg-ink shadow-lg">
-                  <img src={LOGO} alt="ZZ PartyTotaal" className="h-11 w-auto rounded-lg object-contain sm:h-14 md:h-16"/>
-                </div>
+                <LogoBadge size="md" />            
               </div>
               <button onClick={() => setOpen(false)} aria-label="Menu sluiten"
                       className="grid h-9 w-9 place-items-center rounded-full border border-white/30 transition-colors hover:bg-white hover:text-brand sm:h-11 sm:w-11">

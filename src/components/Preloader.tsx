@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { LOGO } from "./ui";
+import { LogoBadge } from "./ui";
 
 export default function Preloader() {
   const [done, setDone] = useState(false);
@@ -28,13 +28,8 @@ export default function Preloader() {
         initial={{ scale: 0.8, rotate: -10, opacity: 0 }}
         animate={{ scale: 1, rotate: -4, opacity: 1 }}
         exit={{ scale: 1.1, opacity: 0 }}
-        transition={{ type: "spring", stiffness: 140, damping: 14 }}
-        className="sticker relative rounded-2xl border-4 border-white bg-ink shadow-[0_25px_60px_rgba(0,0,0,0.5)] sm:border-[6px]">
-        <img
-          src={LOGO}
-          alt="ZZ PartyTotaal"
-          className="h-auto w-[82vw] max-w-[850px] rounded-xl object-contain sm:w-[65vw]"
-        />
+        transition={{ type: "spring", stiffness: 140, damping: 14 }}>
+        <LogoBadge size="xl" className="border-4 sm:border-[6px]" />
       </motion.div>
 
       {/* Laadbalk container */}
