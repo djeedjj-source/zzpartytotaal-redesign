@@ -60,19 +60,16 @@ body {
 }
 
 /* Custom desktop scrollbar */
+/* Verberg scrollbars globaal voor alle browsers zonder scrollen te breken */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE en Edge */
+}
+
 ::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: #0b0b0c;
-}
-::-webkit-scrollbar-thumb {
-  background: #3a3a3d;
-  border-radius: 99px;
-  border: 2px solid #0b0b0c;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-brand);
+  display: none; /* Chrome, Safari, Opera */
+  width: 0px;
+  background: transparent;
 }
 
 /* Typografie hulpmiddelen */

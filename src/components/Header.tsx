@@ -40,6 +40,10 @@ export default function Header() {
     };
   }, [open]);
 
+    const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+};
   return (
     <>
       <motion.header
@@ -54,15 +58,13 @@ export default function Header() {
       >
         <div className="mx-auto flex max-w-[1520px] items-center justify-between gap-1 px-2.5 py-2 sm:gap-6 sm:px-8 sm:py-3">
           {/* Logo als speelse gekantelde sticker met afgeronde hoeken */}
-          <Link to="/" className="group relative z-10 -mb-3 shrink-0 sm:-mb-5" aria-label="ZZ PartyTotaal home">
-           <motion.div
-             whileHover={{ rotate: 1, scale: 1.05 }}
-             transition={{ type: "spring", stiffness: 300, damping: 15 }}
-             className="sticker -rotate-2 rounded-xl bg-white p-1 shadow-lg ring-1 ring-ink/10 sm:p-1.5"
-            >
-           <img src={LOGO} alt="ZZ PartyTotaal — het totale partyconcept" className="h-11 w-auto rounded-lg object-contain sm:h-14 md:h-16"
-            />
-           </motion.div>
+          <Link to="/" onClick={scrollToTop} 
+           className="group relative z-10 -mb-3 shrink-0 sm:-mb-5" aria-label="ZZ PartyTotaal home">
+            <motion.div whileHover={{ rotate: 1, scale: 1.04 }} 
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
+            className="sticker -rotate-2 rounded-xl bg-ink border-4 border-white shadow-lg">
+              <img src={LOGO} alt="ZZ PartyTotaal — het totale partyconcept" className="h-11 w-auto rounded-lg object-contain sm:h-14 md:h-16"/>
+            </motion.div>
           </Link>
 
           {/* Desktop nav */}
