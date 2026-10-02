@@ -32,7 +32,10 @@ export default function Ticker() {
   return (
     <div className="relative z-30 -mt-10 -mb-10 sm:-mt-14 sm:-mb-14 select-none overflow-hidden py-4 pointer-events-none">
       <div className="relative -left-[2%] w-[104%] -rotate-1 bg-brand py-3.5 shadow-2xl border-y-4 border-ink transform-gpu [backface-visibility:hidden]">
-        <div className="flex w-max animate-marquee will-change-transform sm:py-0.5">
+        <div 
+          className="flex w-max animate-marquee will-change-transform sm:py-0.5"
+          style={{ animationDuration: "45s" }}
+        >
           <Row />
           <Row />
           <Row />

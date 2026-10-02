@@ -106,7 +106,7 @@ export default function Intro() {
               whileInView={{ opacity: 1, scale: 1, rotate: 4 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ type: "spring", stiffness: 160, damping: 12, delay: 0.4 }}
-              className="sticker absolute -right-3 -top-6 rounded-xl border-4 border-white bg-ink shadow-xl sm:-right-6 sm:-top-8">
+              className="sticker absolute -right-3 -top-6 sm:-right-6 sm:-top-8">
                <LogoBadge size="lg" />
             </motion.div>
 
@@ -115,14 +115,14 @@ export default function Intro() {
         </div>
 
         {/* Stats Grid met gegarandeerde tussenruimte tegen overlap */}
-        <div className="mt-20 grid grid-cols-2 gap-x-8 gap-y-12 border-t-2 border-ink/10 pt-12 sm:mt-28 sm:gap-x-12 lg:grid-cols-4 lg:gap-x-8">
+        <div className="mt-20 grid grid-cols-2 gap-x-6 gap-y-12 border-t-2 border-ink/10 pt-12 sm:mt-28 sm:gap-x-12 lg:grid-cols-4 lg:gap-x-8">
           {STATS.map((s, i) => (
             <Reveal key={s.label} delay={0.06 * i}>
-              <div className={`flex flex-col ${i > 0 ? "lg:border-l-2 lg:border-ink/10 lg:pl-8" : ""}`}>
+              <div className={`flex flex-col min-w-0 ${i > 0 ? "lg:border-l-2 lg:border-ink/10 lg:pl-8" : ""}`}>
                 <div className="font-display text-4xl leading-none text-brand sm:text-5xl lg:text-6xl">
                   <Counter to={s.value} suffix={s.suffix} />
                 </div>
-                <div className="mt-3 text-xs font-bold uppercase tracking-[0.14em] text-ink/65 sm:text-[13px] sm:tracking-[0.18em]">
+                <div className="mt-3 text-xs font-bold uppercase tracking-[0.12em] text-ink/65 break-words hyphens-auto sm:text-[13px] sm:tracking-[0.18em]">
                   {s.label}
                 </div>
               </div>

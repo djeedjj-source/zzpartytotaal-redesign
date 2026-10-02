@@ -29,7 +29,7 @@ export default function Preloader() {
         animate={{ scale: 1, rotate: -4, opacity: 1 }}
         exit={{ scale: 1.1, opacity: 0 }}
         transition={{ type: "spring", stiffness: 140, damping: 14 }}>
-        <LogoBadge size="xl" className="border-4 sm:border-[6px]" />
+        <LogoBadge size="xl" />
       </motion.div>
 
       {/* Laadbalk container */}

@@ -50,7 +50,7 @@ export default function Footer() {
       <div className="mx-auto max-w-[1520px] px-5 pt-20 sm:px-8">
         {/* Brand row */}
         <div className="flex flex-wrap items-center justify-between gap-8 border-b border-white/10 pb-12">
-          <div className="flex items-center gap-5">
+          <div className="-rotate-2">
             <LogoBadge size="sm" />
             <div>
               <p className="font-display text-2xl uppercase leading-tight">

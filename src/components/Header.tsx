@@ -61,7 +61,7 @@ export default function Header() {
           <Link to="/" onClick={scrollToTop} 
            className="group relative z-10 -mb-3 shrink-0 sm:-mb-5" aria-label="ZZ PartyTotaal home">
             <motion.div whileHover={{ rotate: 1, scale: 1.04 }} 
-                        transition={{ type: "spring", stiffness: 300, damping: 15 }}>
+                        transition={{ type: "spring", stiffness: 300, damping: 15 }} classname="-rotate-2">
                         <LogoBadge size="md" />
             </motion.div>
           </Link>

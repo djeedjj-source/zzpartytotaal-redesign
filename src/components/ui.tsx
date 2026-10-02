@@ -146,21 +146,33 @@ interface LogoBadgeProps {
 }
 
 export function LogoBadge({ size = "md", className = "" }: LogoBadgeProps) {
-  const sizeClasses = {
-    sm: "h-8 sm:h-9",
-    md: "h-11 sm:h-14 md:h-16",
-    lg: "h-12 sm:h-16",
-    xl: "h-auto w-[82vw] max-w-[850px] sm:w-[65vw]",
+  const config = {
+    sm: {
+      wrapper: "rounded-lg p-[2.5px] shadow-sm",
+      img: "h-8 sm:h-9 rounded-[6px]",
+    },
+    md: {
+      wrapper: "rounded-xl p-1 shadow-md",
+      img: "h-11 sm:h-14 md:h-16 rounded-lg",
+    },
+    lg: {
+      wrapper: "rounded-xl p-1 shadow-md",
+      img: "h-12 sm:h-16 rounded-lg",
+    },
+    xl: {
+      wrapper: "rounded-3xl sm:rounded-[36px] p-2.5 sm:p-3 shadow-2xl",
+      img: "h-auto w-[82vw] max-w-[850px] sm:w-[65vw] rounded-2xl sm:rounded-[24px]",
+    },
   }[size];
 
   return (
     <div
-      className={`sticker inline-flex shrink-0 -rotate-2 items-center justify-center rounded-xl border-4 border-white shadow-lg ${className}`}
+      className={`inline-flex shrink-0 items-center justify-center bg-white ${config.wrapper} ${className}`}
     >
       <img
         src={LOGO}
         alt="ZZ PartyTotaal — het totale partyconcept"
-        className={`${sizeClasses} rounded-lg object-contain`}
+        className={`${config.img} object-contain`}
       />
     </div>
   );
