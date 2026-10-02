@@ -200,7 +200,7 @@ export default function Footer() {
           className="select-none overflow-hidden text-center font-display uppercase leading-[0.8] text-outline opacity-25"
         >
           <span className="block translate-y-[12%] text-[clamp(3.4rem,12.4vw,12rem)]">
-            Partytotaal
+            ZZ Partytotaal
           </span>
         </div>
 

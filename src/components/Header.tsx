@@ -60,8 +60,10 @@ export default function Header() {
           {/* Logo als speelse gekantelde sticker met afgeronde hoeken */}
           <Link to="/" onClick={scrollToTop} 
            className="group relative z-10 -mb-3 shrink-0 sm:-mb-5" aria-label="ZZ PartyTotaal home">
-            <motion.div whileHover={{ rotate: 1, scale: 1.04 }} 
-                        transition={{ type: "spring", stiffness: 300, damping: 15 }} classname="-rotate-2">
+            <motion.div initial={{ rotate: -2 }}
+                        animate={{ rotate: -2 }}
+                        whileHover={{ rotate: 1, scale: 1.04 }} 
+                        transition={{ type: "spring", stiffness: 300, damping: 15 }}>
                         <LogoBadge size="md" />
             </motion.div>
           </Link>
@@ -155,7 +157,7 @@ export default function Header() {
             className="fixed inset-0 z-[60] flex flex-col bg-brand text-white"
           >
             <div className="mx-auto flex w-full max-w-[1520px] items-center justify-between gap-1 px-2.5 py-2 sm:gap-6 sm:px-8 sm:py-3">
-              <div onClick={() => { setOpen(false); scrollToTop(); }} className="group relative z-10 -mb-3 shrink-0 cursor-pointer sm:-mb-5">
+              <div onClick={() => { setOpen(false); scrollToTop(); }} className="group relative z-10 -mb-3 shrink-0 cursor-pointer -rotate-2 sm:-mb-5">
                 <LogoBadge size="md" />            
               </div>
               <button onClick={() => setOpen(false)} aria-label="Menu sluiten"
