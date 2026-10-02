@@ -155,20 +155,14 @@ export default function Header() {
             transition={{ duration: 0.65, ease: [0.76, 0, 0.24, 1] }}
             className="fixed inset-0 z-[60] flex flex-col bg-brand text-white"
           >
-            <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_80%_10%,rgba(0,0,0,0.25),transparent)]" />
-            <div className="relative flex shrink-0 items-center justify-between px-5 py-3 sm:px-8">
-              <div className="sticker -rotate-2 rounded-lg bg-white p-0.5 sm:p-1">
-                <img
-                  src={LOGO}
-                  alt="ZZ PartyTotaal"
-                  className="h-8 w-auto rounded-lg object-contain sm:h-9"
-                />
+            <div className="mx-auto flex w-full max-w-[1520px] items-center justify-between gap-1 px-2.5 py-2 sm:gap-6 sm:px-8 sm:py-3">
+              <div onClick={() => { setOpen(false); scrollToTop(); }} className="group relative z-10 -mb-3 shrink-0 cursor-pointer sm:-mb-5">
+                <div className="sticker -rotate-2 rounded-xl border-4 border-white bg-ink shadow-lg">
+                  <img src={LOGO} alt="ZZ PartyTotaal" className="h-11 w-auto rounded-lg object-contain sm:h-14 md:h-16"/>
+                </div>
               </div>
-              <button
-                onClick={() => setOpen(false)}
-                aria-label="Menu sluiten"
-                className="grid h-10 w-10 place-items-center rounded-full border border-white/30 transition-colors hover:bg-white hover:text-brand sm:h-11 sm:w-11"
-              >
+              <button onClick={() => setOpen(false)} aria-label="Menu sluiten"
+                      className="grid h-9 w-9 place-items-center rounded-full border border-white/30 transition-colors hover:bg-white hover:text-brand sm:h-11 sm:w-11">
                 <X size={20} />
               </button>
             </div>

@@ -106,8 +106,7 @@ export default function Intro() {
               whileInView={{ opacity: 1, scale: 1, rotate: 4 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ type: "spring", stiffness: 160, damping: 12, delay: 0.4 }}
-              className="sticker absolute -right-3 -top-6 rounded-xl bg-white p-1 sm:-right-6 sm:-top-8 sm:p-1.5"
-            >
+              className="sticker absolute -right-3 -top-6 rounded-xl border-4 border-white bg-ink shadow-xl sm:-right-6 sm:-top-8">
               <img 
                 src={LOGO} 
                 alt="ZZ PartyTotaal" 

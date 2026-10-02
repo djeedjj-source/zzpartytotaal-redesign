@@ -29,8 +29,7 @@ export default function Preloader() {
         animate={{ scale: 1, rotate: -4, opacity: 1 }}
         exit={{ scale: 1.1, opacity: 0 }}
         transition={{ type: "spring", stiffness: 140, damping: 14 }}
-        className="sticker relative rounded-2xl bg-white p-2 shadow-[0_25px_60px_rgba(0,0,0,0.5)] sm:p-4"
-      >
+        className="sticker relative rounded-2xl border-4 border-white bg-ink shadow-[0_25px_60px_rgba(0,0,0,0.5)] sm:border-[6px]">
         <img
           src={LOGO}
           alt="ZZ PartyTotaal"
