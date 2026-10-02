@@ -155,7 +155,7 @@ export function LogoBadge({ size = "md", className = "" }: LogoBadgeProps) {
 
   return (
     <div
-      className={`sticker inline-flex shrink-0 -rotate-2 items-center justify-center rounded-xl border-4 border-white bg-ink p-1 shadow-lg ring-1 ring-ink/10 ${className}`}
+      className={`sticker inline-flex shrink-0 -rotate-2 items-center justify-center rounded-xl border-4 border-white shadow-lg ${className}`}
     >
       <img
         src={LOGO}
